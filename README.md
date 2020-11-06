@@ -1,6 +1,36 @@
-# Ant Design Pro
+# Ant Design Pro 的 多 Tab 版本
 
-This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
+这个项目是基于 [Ant Design Pro](https://pro.ant.design) 的 多 tab 版本.
+
+## 背景
+
+1. 官方不支持多 tab。
+
+2. 其他的实现的多 tab 侵入性很强，要改的地方很多。这个版本，把多 tab 封装成组件在 components/TabPages 下，直接在 BasicLayout 引入即可。其余的使用，例如打开新页面、替换当前页面都没有改变。
+
+3. 本多 tab 实现了右键菜单，包含刷新 tab、关闭其他页面的功能。
+
+## 优点
+
+## 常见使用场景
+
+### 关闭当前 tab
+
+```tsx
+history.push({ state: { closed: true } });
+```
+
+### 替换当前 tab
+
+```tsx
+history.replace('/a/b/c');
+```
+
+### 关闭当前页面，并跳转指定 tab
+
+```tsx
+history.push({ pathname: '/a/b/c', state: { closed: true } });
+```
 
 ## Environment Prepare
 

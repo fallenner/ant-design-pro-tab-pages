@@ -1,7 +1,7 @@
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Divider, message, Input, Drawer } from 'antd';
 import React, { useState, useRef } from 'react';
-import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
+import { FooterToolbar } from '@ant-design/pro-layout';
 import ProTable, { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import CreateForm from './components/CreateForm';
@@ -157,7 +157,7 @@ const TableList: React.FC<{}> = () => {
   ];
 
   return (
-    <PageContainer>
+    <>
       <ProTable<TableListItem>
         headerTitle="查询表格"
         actionRef={actionRef}
@@ -258,7 +258,7 @@ const TableList: React.FC<{}> = () => {
           />
         )}
       </Drawer>
-    </PageContainer>
+    </>
   );
 };
 

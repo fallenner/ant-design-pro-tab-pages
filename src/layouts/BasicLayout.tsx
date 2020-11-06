@@ -15,6 +15,7 @@ import { GithubOutlined } from '@ant-design/icons';
 import { Result, Button } from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
+import TabPages from '@/components/TabPages';
 import { ConnectState } from '@/models/connect';
 import { getMatchMenu } from '@umijs/route-utils';
 import logo from '../assets/logo.svg';
@@ -88,7 +89,6 @@ const defaultFooterDom = (
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const {
     dispatch,
-    children,
     settings,
     location = {
       pathname: '/',
@@ -165,7 +165,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       }}
     >
       <Authorized authority={authorized!.authority} noMatch={noMatch}>
-        {children}
+        <TabPages {...(props as any)} defaultRoute="/welcome" />
       </Authorized>
     </ProLayout>
   );
